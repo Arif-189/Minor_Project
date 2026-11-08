@@ -98,6 +98,7 @@ with results_tab:
     if "baseline_median_mae_min" in ndls:
         st.caption(f"Simple median baseline MAE: {ndls['baseline_median_mae_min']:.2f} min")
     if DEFAULT_TEST_PREDICTIONS.exists() or predictions_upload is not None:
+        predictions_upload.seek(0)
         test_data = pd.read_csv(predictions_upload) if predictions_upload is not None else pd.read_csv(DEFAULT_TEST_PREDICTIONS)
         if {"actual_delay_min", "predicted_delay_min"}.issubset(test_data.columns):
             st.subheader("Actual versus predicted delay on the final holdout")
@@ -181,6 +182,7 @@ with stations_tab:
 with predictions_tab:
     st.subheader("Row-by-row final test predictions")
     if predictions_upload is not None:
+        predictions_upload.seek(0)
         test_data = pd.read_csv(predictions_upload)
     elif DEFAULT_TEST_PREDICTIONS.exists():
         test_data = pd.read_csv(DEFAULT_TEST_PREDICTIONS)
