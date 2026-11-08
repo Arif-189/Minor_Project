@@ -1,0 +1,53 @@
+{"kind":"slide","id":"sl/y90nupkv","slideIndex":0,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"RAILWAY AI MINOR PROJECT","textShapes":6,"backgroundColor":"rgba(20,43,69,1)"}
+{"kind":"notes","id":"nt/y90nupkv","slideIndex":0,"text":"Project summary based on the current repository artifacts. Prediction metrics are historical holdout results. Platform results are synthetic scenario outputs, not observed NDLS operations."}
+{"kind":"slide","id":"sl/hwbqtkby","slideIndex":1,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"NAVIGATION","textShapes":28,"backgroundColor":"rgba(245,247,250,1)"}
+{"kind":"notes","id":"nt/hwbqtkby","slideIndex":1,"text":"The index maps the deck sections. Research and product facts are cited in the relevant slide notes."}
+{"kind":"slide","id":"sl/ofy9wn61","slideIndex":2,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"PROJECT FRAMING","textShapes":14,"backgroundColor":"rgba(245,247,250,1)"}
+{"kind":"notes","id":"nt/ofy9wn61","slideIndex":2,"text":"Historical prediction metrics come from the held-out Indian train-history sample. Scheduler metrics come from configurable synthetic scenarios. Dataset: https://huggingface.co/datasets/yadavsaurabh/indian-railways-runs"}
+{"kind":"slide","id":"sl/jyx0ra1s","slideIndex":3,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"PROJECT FRAMING","textShapes":4,"backgroundColor":"rgba(245,247,250,1)"}
+{"kind":"table","id":"tb/1w7ux0vy","slideIndex":3,"position":{"left":72,"top":160,"width":1136,"height":440},"name":"","rows":7,"cols":3,"preview":"Component | Implementation | Evidence"}
+{"kind":"notes","id":"nt/jyx0ra1s","slideIndex":3,"text":"Scope mapped from the user-provided minor-project synopsis."}
+{"kind":"slide","id":"sl/i107q5of","slideIndex":4,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"RELATED RESEARCH","textShapes":12,"backgroundColor":"rgba(245,247,250,1)"}
+{"kind":"notes","id":"nt/i107q5of","slideIndex":4,"text":"Primary sources: Gao et al. (2024), https://doi.org/10.1049/itr2.12461 ; Tiong et al. (2023), https://doi.org/10.1016/j.trc.2023.104027 ; Spanninger et al. (2022), https://doi.org/10.1016/j.jrtpm.2022.100312"}
+{"kind":"slide","id":"sl/x8f69ofe","slideIndex":5,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"DATA","textShapes":14,"backgroundColor":"rgba(245,247,250,1)"}
+{"kind":"notes","id":"nt/x8f69ofe","slideIndex":5,"text":"Dataset card: https://huggingface.co/datasets/yadavsaurabh/indian-railways-runs . Current model run uses seven cached train histories. The dataset card declares GPL-3.0."}
+{"kind":"slide","id":"sl/gnmp4jqx","slideIndex":6,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"PREDICTION","textShapes":19,"backgroundColor":"rgba(245,247,250,1)"}
+{"kind":"notes","id":"nt/gnmp4jqx","slideIndex":6,"text":"Counts and split design from output/evaluation.json."}
+{"kind":"slide","id":"sl/fu1gfa1s","slideIndex":7,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"PREDICTION","textShapes":5,"backgroundColor":"rgba(245,247,250,1)"}
+{"kind":"chart","id":"ch/4ra10n61","slideIndex":7,"position":{"left":120,"top":166,"width":1030,"height":390},"name":"Chart","chartType":"bar"}
+{"kind":"notes","id":"nt/fu1gfa1s","slideIndex":7,"text":"Optimizer validation scores from output/evaluation.json. Search: population 6, two generations, bounded training sample 6,000 and validation sample 2,500. Adapted from Gao et al., not a reproduction. Source: https://doi.org/10.1049/itr2.12461"}
+{"kind":"slide","id":"sl/udsvah03","slideIndex":8,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"PREDICTION","textShapes":6,"backgroundColor":"rgba(245,247,250,1)"}
+{"kind":"table","id":"tb/183ylg7e","slideIndex":8,"position":{"left":90,"top":190,"width":1100,"height":210},"name":"","rows":3,"cols":6,"preview":"Model | N | MAE (min) | RMSE (min) | R² | 90% coverage"}
+{"kind":"notes","id":"nt/udsvah03","slideIndex":8,"text":"Metrics from the untouched chronological test partition."}
+{"kind":"slide","id":"sl/m90b6t0r","slideIndex":9,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"PREDICTION","textShapes":6,"backgroundColor":"rgba(245,247,250,1)"}
+{"kind":"table","id":"tb/9k7u5sni","slideIndex":9,"position":{"left":140,"top":190,"width":1000,"height":240},"name":"","rows":4,"cols":5,"preview":"Target station | Test rows | MAE (min) | RMSE (min) | R²"}
+{"kind":"notes","id":"nt/m90b6t0r","slideIndex":9,"text":"Station-level final-test scores are from the pooled model; station groups with fewer than 50 rows are omitted."}
+{"kind":"slide","id":"sl/jetc3ut0","slideIndex":10,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"PREDICTION","textShapes":14,"backgroundColor":"rgba(245,247,250,1)"}
+{"kind":"notes","id":"nt/jetc3ut0","slideIndex":10,"text":"TreeSHAP uses XGBoost native pred_contribs on the fitted pipeline. Five-row NDLS check maximum additive reconstruction error was 0.000042 min. Literature: Lundberg & Lee (2017), NeurIPS 30; Gao et al. (2024)."}
+{"kind":"slide","id":"sl/8f2psfyx","slideIndex":11,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"INTERACTIVE DASHBOARD","textShapes":21,"backgroundColor":"rgba(245,247,250,1)"}
+{"kind":"notes","id":"nt/8f2psfyx","slideIndex":11,"text":"Dashboard implementation in src/dashboard.py. Streamlit documentation: https://docs.streamlit.io/"}
+{"kind":"slide","id":"sl/hgzapcr6","slideIndex":12,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"SYSTEM DESIGN","textShapes":18,"backgroundColor":"rgba(245,247,250,1)"}
+{"kind":"notes","id":"nt/hgzapcr6","slideIndex":12,"text":"Architecture reflects the current codebase; historical delay labels are used only in model evaluation."}
+{"kind":"slide","id":"sl/6lsnupw7","slideIndex":13,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"PLATFORM SCHEDULING","textShapes":19,"backgroundColor":"rgba(245,247,250,1)"}
+{"kind":"notes","id":"nt/6lsnupw7","slideIndex":13,"text":"Algorithm implementation: src/railway_delay/platforming.py. It creates a candidate priority-weighted interval plan and uses a minimum-wait FCFS safeguard when that candidate increases total wait."}
+{"kind":"slide","id":"sl/vaxsvy10","slideIndex":14,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"PLATFORM SAFETY CHECKS","textShapes":12,"backgroundColor":"rgba(245,247,250,1)"}
+{"kind":"notes","id":"nt/vaxsvy10","slideIndex":14,"text":"These are simplified software checks, not an operational railway safety case."}
+{"kind":"slide","id":"sl/gny5sjyp","slideIndex":15,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"DIGITAL TWIN","textShapes":16,"backgroundColor":"rgba(245,247,250,1)"}
+{"kind":"notes","id":"nt/gny5sjyp","slideIndex":15,"text":"SimPy is a process-based discrete-event simulation framework with limited-capacity shared resources: https://simpy.readthedocs.io/en/stable/simpy_intro/shared_resources.html"}
+{"kind":"slide","id":"sl/14bup87q","slideIndex":16,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"SIMULATION RESULTS","textShapes":5,"backgroundColor":"rgba(245,247,250,1)"}
+{"kind":"table","id":"tb/poju9cvq","slideIndex":16,"position":{"left":88,"top":200,"width":1100,"height":230},"name":"","rows":3,"cols":5,"preview":"Scenario | Movements / platforms | FCFS wait (min) | Selected wait (min) | Change"}
+{"kind":"notes","id":"nt/14bup87q","slideIndex":16,"text":"Synthetic scenarios generated with fixed seeds. The 36-movement case uses 6 platforms, moderate demand, seed 42. The 60-movement case uses 4 platforms, busy demand, seed 7."}
+{"kind":"slide","id":"sl/y5wne50z","slideIndex":17,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"STRESS TESTING","textShapes":16,"backgroundColor":"rgba(245,247,250,1)"}
+{"kind":"notes","id":"nt/y5wne50z","slideIndex":17,"text":"Randomized ranges are explicit scenario assumptions, not empirical railway failure distributions."}
+{"kind":"slide","id":"sl/nid43ytk","slideIndex":18,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"STRESS RESULTS","textShapes":5,"backgroundColor":"rgba(245,247,250,1)"}
+{"kind":"chart","id":"ch/4ne5of6d","slideIndex":18,"position":{"left":150,"top":170,"width":990,"height":360},"name":"Chart","chartType":"bar"}
+{"kind":"notes","id":"nt/nid43ytk","slideIndex":18,"text":"10,000 runs, seed 2068. Static conflict risk means nominal platform reservations overlap after perturbation. Zero post-queue resource collisions are guaranteed by the exclusive resource model and are not a safety certification."}
+{"kind":"slide","id":"sl/zyxsni5k","slideIndex":19,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"EVALUATION","textShapes":4,"backgroundColor":"rgba(245,247,250,1)"}
+{"kind":"table","id":"tb/q5cnipsf","slideIndex":19,"position":{"left":85,"top":180,"width":1110,"height":370},"name":"","rows":6,"cols":3,"preview":"Target | Measured result | Status"}
+{"kind":"notes","id":"nt/zyxsni5k","slideIndex":19,"text":"Targets copied from the user-provided synopsis. Measured results come from the current evaluation and synthetic scenario output."}
+{"kind":"slide","id":"sl/m1wvqtk3","slideIndex":20,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"INTERPRETATION","textShapes":9,"backgroundColor":"rgba(245,247,250,1)"}
+{"kind":"notes","id":"nt/m1wvqtk3","slideIndex":20,"text":"The dataset card includes a platform field, but the project does not use it as a verified assignment or infrastructure source."}
+{"kind":"slide","id":"sl/5onypobq","slideIndex":21,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"CONCLUSION","textShapes":10,"backgroundColor":"rgba(245,247,250,1)"}
+{"kind":"notes","id":"nt/5onypobq","slideIndex":21,"text":"Summary of implemented code and current measured outputs."}
+{"kind":"slide","id":"sl/c7uhcr6t","slideIndex":22,"layout":{"id":"ly/14ra9krq","name":"Blank"},"title":"REFERENCES","textShapes":18,"backgroundColor":"rgba(245,247,250,1)"}
+{"kind":"notes","id":"nt/c7uhcr6t","slideIndex":22,"text":"Full links are included in speaker notes on the relevant research and method slides."}

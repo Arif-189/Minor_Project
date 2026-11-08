@@ -1,0 +1,34 @@
+{
+  "source_files": 7,
+  "source_rows": 281252,
+  "engineered_examples": 164297,
+  "station_datasets": [
+    {
+      "station_code": "NDLS",
+      "examples": 308,
+      "trains": 2,
+      "journey_dates": 308,
+      "date_start": "2022-01-14",
+      "date_end": "2025-09-14",
+      "file": "data/processed/stations/NDLS.csv"
+    },
+    {
+      "station_code": "AGC",
+      "examples": 1583,
+      "trains": 1,
+      "journey_dates": 1583,
+      "date_start": "2020-01-19",
+      "date_end": "2026-08-31",
+      "file": "data/processed/stations/AGC.csv"
+    },
+    {
+      "station_code": "GWL",
+      "examples": 1234,
+      "trains": 1,
+      "journey_dates": 1234,
+      "date_start": "2020-01-06",
+      "date_end": "2026-08-30",
+      "file": "data/processed/stations/GWL.csv"
+    }
+  ]
+}
